@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\Works\\Projects\\Freelancers\\Template\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71A6381A-CEC2-43FD-928C-599B5D297BB0}|NewFolder1{71A6381A-CEC2-43FD-928C-599B5D297BB0}|C:\\Works\\Projects\\Freelancers\\Template\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{71A6381A-CEC2-43FD-928C-599B5D297BB0}|NewFolder1{71A6381A-CEC2-43FD-928C-599B5D297BB0}|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}|Api\\Api.csproj|c:\\works\\projects\\freelancers\\template\\api\\controllers\\tests\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}|Api\\Api.csproj|solutionrelative:api\\controllers\\tests\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}|Api\\Api.csproj|c:\\works\\projects\\freelancers\\template\\api\\tests\\entities\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}|Api\\Api.csproj|solutionrelative:api\\tests\\entities\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|c:\\works\\projects\\freelancers\\template\\core\\commons\\responses\\errorresultresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|solutionrelative:core\\commons\\responses\\errorresultresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|c:\\works\\projects\\freelancers\\template\\core\\commons\\responses\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|solutionrelative:core\\commons\\responses\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|c:\\works\\projects\\freelancers\\template\\core\\commons\\responses\\successresultresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|solutionrelative:core\\commons\\responses\\successresultresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}|Api\\Api.csproj|c:\\works\\projects\\freelancers\\template\\api\\configurations\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}|Api\\Api.csproj|solutionrelative:api\\configurations\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}|Api\\Api.csproj|c:\\works\\projects\\freelancers\\template\\api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}|Api\\Api.csproj|solutionrelative:api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|c:\\works\\projects\\freelancers\\template\\core\\bases\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|solutionrelative:core\\bases\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|c:\\works\\projects\\freelancers\\template\\core\\bases\\interfaces\\icode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}|Core\\Core.csproj|solutionrelative:core\\bases\\interfaces\\icode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +46,112 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 26,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\Api\\Tests\\Entities\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "Api\\Tests\\Entities\\WeatherForecast.cs",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\Api\\Tests\\Entities\\WeatherForecast.cs*",
+              "RelativeToolTip": "Api\\Tests\\Entities\\WeatherForecast.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T18:06:54.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\Api\\Controllers\\Tests\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\Tests\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\Api\\Controllers\\Tests\\WeatherForecastController.cs*",
+              "RelativeToolTip": "Api\\Controllers\\Tests\\WeatherForecastController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T17:52:47.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\Api\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\Api\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "Api\\Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T17:51:18.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\Api\\Configurations\\appsettings.json",
+              "RelativeDocumentMoniker": "Api\\Configurations\\appsettings.json",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\Api\\Configurations\\appsettings.json",
+              "RelativeToolTip": "Api\\Configurations\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-12T17:50:47.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaseResponse.cs",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Commons\\Responses\\BaseResponse.cs",
+              "RelativeDocumentMoniker": "Core\\Commons\\Responses\\BaseResponse.cs",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Commons\\Responses\\BaseResponse.cs",
+              "RelativeToolTip": "Core\\Commons\\Responses\\BaseResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T17:21:57.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ErrorResultResponse.cs",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Commons\\Responses\\ErrorResultResponse.cs",
+              "RelativeDocumentMoniker": "Core\\Commons\\Responses\\ErrorResultResponse.cs",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Commons\\Responses\\ErrorResultResponse.cs",
+              "RelativeToolTip": "Core\\Commons\\Responses\\ErrorResultResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T17:20:23.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SuccessResultResponse.cs",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Commons\\Responses\\SuccessResultResponse.cs",
+              "RelativeDocumentMoniker": "Core\\Commons\\Responses\\SuccessResultResponse.cs",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Commons\\Responses\\SuccessResultResponse.cs",
+              "RelativeToolTip": "Core\\Commons\\Responses\\SuccessResultResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T17:18:12.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ICode.cs",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Bases\\Interfaces\\ICode.cs",
+              "RelativeDocumentMoniker": "Core\\Bases\\Interfaces\\ICode.cs",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Bases\\Interfaces\\ICode.cs",
+              "RelativeToolTip": "Core\\Bases\\Interfaces\\ICode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T16:44:46.232Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -122,15 +258,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-06-12T16:32:34.666Z",
+              "DocumentIndex": 7,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Bases\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Core\\Bases\\BaseEntity.cs",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Bases\\BaseEntity.cs",
+              "RelativeToolTip": "Core\\Bases\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T16:43:34.706Z",
               "EditorCaption": ""
             }
           ]

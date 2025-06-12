@@ -110,6 +110,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "NewId": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

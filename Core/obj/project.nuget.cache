@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vd4Ntq0fAr0=",
+  "dgSpecHash": "gxSFuZd7a/I=",
   "success": true,
   "projectFilePath": "C:\\Works\\Projects\\Freelancers\\Template\\Core\\Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\tuand\\.nuget\\packages\\newid\\4.0.1\\newid.4.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
