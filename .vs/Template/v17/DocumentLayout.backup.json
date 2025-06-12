@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Works\\Projects\\Freelancers\\Template\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{71A6381A-CEC2-43FD-928C-599B5D297BB0}|NewFolder1{71A6381A-CEC2-43FD-928C-599B5D297BB0}|C:\\Works\\Projects\\Freelancers\\Template\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{71A6381A-CEC2-43FD-928C-599B5D297BB0}|NewFolder1{71A6381A-CEC2-43FD-928C-599B5D297BB0}|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 26,
           "Children": [
             {
               "$type": "Bookmark",
@@ -114,6 +119,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Works\\Projects\\Freelancers\\Template\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Works\\Projects\\Freelancers\\Template\\docker-compose.yml*",
+              "RelativeToolTip": "docker-compose.yml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-06-12T16:32:34.666Z",
+              "EditorCaption": ""
             }
           ]
         },
