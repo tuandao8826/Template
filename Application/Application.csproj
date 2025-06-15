@@ -10,4 +10,10 @@
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\Extensions\" />
+    <Folder Include="Modules\Users\Commands\" />
+    <Folder Include="Modules\Users\Queries\" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,6 @@
+using Api.Common.ControllerWrappers;
 using Api.Tests.Entities;
-using Core.Commons.Responses;
+using Application.Common.ApiWrappers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.Tests;

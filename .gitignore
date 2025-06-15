@@ -492,3 +492,33 @@ src/Api/appsettings.Testing-Development.json
 #src/Api/appsettings.Testing-Deployment.json
 src/Api/appsettings.json
 !Dockers/*/.env
+
+
+# Ignore file
+*.cache
+*.Development.json
+
+# Ignore Visual Studio folders and files
+.vs/
+.vs2019/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build and temporary files
+.vs/
+.vscode/
+*.dbmdl
+*.bak
+*.backup
+*.futdcache.v2
+*.dtbcache.v2
+
+# Ignore obj and bin folders
+obj/
+bin/
+
+# Ignore specific files in obj folder
+obj/**/Application.AssemblyInfoInputs.cache
+obj/**/Application.AssemblyInfo.cs
