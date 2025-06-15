@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Application.Common.Helpers;
 using System.Linq.Expressions;
-using System.Net.NetworkInformation;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Common.Definitions;
 
@@ -13,7 +9,7 @@ public static class Message<T>
 	private const char Delimiter = '.';
 	private const string Prefix = "Message";
 	private const string Success = "Success";
-	private const string Failed = "Failed";
+	private const string Fail = "Fail";
 
 	// ------------------- Message action ------------------- 
 	public static string Create(bool status = true)
@@ -31,6 +27,15 @@ public static class Message<T>
 	public static string Detail(bool status = true)
 		=> Action(MessageActionType.Detail, status);
 
+	public static string Search(bool status = true)
+		=> Action(MessageActionType.Search, status);
+
+	public static string Import(bool status = true)
+		=> Action(MessageActionType.Import, status);
+
+	public static string Download(bool status = true)
+		=> Action(MessageActionType.Download, status);
+
 	// ------------------- Message error ------------------- 
 	public static string Required(Expression<Func<T, object>> propExpression)
 		=> Action(MessageErrorType.Required, propExpression);
@@ -46,10 +51,10 @@ public static class Message<T>
 		=> BuildMessage(type.ToString(), propName);
 
 	public static string Action(MessageErrorType type, Expression<Func<T, object>> propExpression)
-		=> BuildMessage(type.ToString(), GetPropertyName(propExpression));
+		=> BuildMessage(type.ToString(), ReflectionHelper.GetPropertyName<T>(propExpression));
 
 	private static string BuildMessage(string type, bool status)
-		=> BuildMessage(type, status ? Success : Failed);
+		=> BuildMessage(type, status ? Success : Fail);
 
 	/// <summary>
 	/// Ex: Message.User.Required.Name
@@ -67,16 +72,6 @@ public static class Message<T>
 			.Append(Delimiter)
 			.Append(propName) // Appends the property name (e.g., "Name", "Age", "Success", "Failed")
 			.ToString();
-
-	private static string GetPropertyName(Expression<Func<T, object>> propExpression)
-	{
-		if (propExpression.Body is MemberExpression memberExpression)
-		{
-			return memberExpression.Member.Name;
-		}
-
-		throw new ArgumentException("Expression is not a member expression.");
-	}
 }
 
 /// <summary>
@@ -108,7 +103,23 @@ public enum MessageActionType
 	/// Used when a resource has been successfully deleted.
 	/// </summary>
 	Deleted,
+
+	/// <summary>
+	/// Used when importing a resource into the system.
+	/// </summary>
+	Import,
+
+	/// <summary>
+	/// Used when downloading a resource.
+	/// </summary>
+	Download,
+
+	/// <summary>
+	/// Used when performing a search action within the application.
+	/// </summary>
+	Search,
 }
+
 
 /// <summary>
 /// Defines various types of error messages that can be used for application responses.

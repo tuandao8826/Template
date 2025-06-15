@@ -1,6 +1,8 @@
 using Api.Common.ControllerWrappers;
 using Api.Tests.Entities;
 using Application.Common.ApiWrappers;
+using Application.Common.Definitions;
+using Application.Modules.Users.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.Tests;
@@ -12,14 +14,7 @@ public class WeatherForecastController : BaseController
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     ];
 
-    private readonly ILogger<WeatherForecastController> _logger;
-
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
-    {
-        _logger = logger;
-    }
-
-	[HttpGet("GetWeatherForecast")]
+	[HttpGet]
 	public ActionResult<SuccessResultResponse<IEnumerable<WeatherForecast>>> Get()
 	{
 		var response = Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -29,6 +24,6 @@ public class WeatherForecastController : BaseController
 			Summary = Summaries[Random.Shared.Next(Summaries.Length)]
 		});
 
-		return ResultResponse(response, "Success");
+		return ResultResponse(response, Message<User>.View());
 	}
 }
