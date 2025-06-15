@@ -7,13 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployments", "Deployments"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{0C40AF56-9F0D-470F-A968-42862AEEB140}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{E4951A97-EBEC-4FD8-A52B-0275CFFA4D6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Src\Core\Core.csproj", "{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{46A18BD9-A56A-46DA-98D6-9DB42A6C7061}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Src\Infrastructure\Infrastructure.csproj", "{05E6FF1C-7264-47BB-918A-642928855BED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{05E6FF1C-7264-47BB-918A-642928855BED}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{9469E758-86CE-4C37-93B4-4010D73C278F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Src\Application\Application.csproj", "{9469E758-86CE-4C37-93B4-4010D73C278F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dockers", "Dockers", "{CA222523-2428-4117-8B80-2F1B8B23F150}"
 EndProject
@@ -27,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{79AC2CBC
 		docker-compose.yaml = docker-compose.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Src\Api\Api.csproj", "{1FE72C31-E94C-45E7-B6CD-FF70F3C489FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,7 +54,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E4951A97-EBEC-4FD8-A52B-0275CFFA4D6B} = {0C40AF56-9F0D-470F-A968-42862AEEB140}
 		{46A18BD9-A56A-46DA-98D6-9DB42A6C7061} = {0C40AF56-9F0D-470F-A968-42862AEEB140}
 		{05E6FF1C-7264-47BB-918A-642928855BED} = {0C40AF56-9F0D-470F-A968-42862AEEB140}
 		{9469E758-86CE-4C37-93B4-4010D73C278F} = {0C40AF56-9F0D-470F-A968-42862AEEB140}
