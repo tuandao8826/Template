@@ -43,6 +43,30 @@ public static class Message<T>
 	public static string Required(string propName)
 		=> Action(MessageErrorType.Required, propName);
 
+	public static string Conflict(Expression<Func<T, object>> propExpression)
+	=> Action(MessageErrorType.Conflict, propExpression);
+
+	public static string Conflict(string propName)
+		=> Action(MessageErrorType.Conflict, propName);
+
+	public static string NotFound(Expression<Func<T, object>> propExpression)
+		=> Action(MessageErrorType.NotFound, propExpression);
+
+	public static string NotFound(string propName)
+		=> Action(MessageErrorType.NotFound, propName);
+
+	public static string AlreadyExists(Expression<Func<T, object>> propExpression)
+		=> Action(MessageErrorType.AlreadyExists, propExpression);
+
+	public static string AlreadyExists(string propName)
+		=> Action(MessageErrorType.AlreadyExists, propName);
+
+	public static string Duplicate(Expression<Func<T, object>> propExpression)
+		=> Action(MessageErrorType.Duplicate, propExpression);
+
+	public static string Duplicate(string propName)
+		=> Action(MessageErrorType.Duplicate, propName);
+
 	// ------------------- Handle message ------------------- 
 	public static string Action(MessageActionType type, bool status)
 		=> BuildMessage(type.ToString(), status);
@@ -126,16 +150,6 @@ public enum MessageActionType
 /// </summary>
 public enum MessageErrorType
 {
-	/// <summary>
-	/// Used when the user is not authorized to access the requested resource.
-	/// </summary>
-	Unauthorized,
-
-	/// <summary>
-	/// Used when the user is authenticated but not allowed to access the resource.
-	/// </summary>
-	Forbidden,
-
 	/// <summary>
 	/// Used when there is a conflict with the current data (e.g., duplicate entries).
 	/// </summary>

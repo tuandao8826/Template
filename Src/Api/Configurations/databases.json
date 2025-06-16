@@ -1,0 +1,14 @@
+{
+    "DatabaseSettigns": {
+        "PostgresSettings": {
+            "ConnectionStrings": {
+                "DefaultConnection": "Host=localhost;Username=[your_username];Password=[your_password];Database=[your_database];"
+            }
+        },
+        "RedisSettings": {
+            "ConnectionStrings": {
+                "DefaultConnection": "127.0.0.1:6379,password=[your_password]"
+            }
+        }
+    }
+}
