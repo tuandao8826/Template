@@ -21,7 +21,7 @@ public class User : BaseEntity
 	
 	public string? Avatar { get; set; }
 
-	public Gender Gender { get; set; } = Gender.Unknown;
+	public Gender Gender { get; set; } = Gender.Other;
 
 	public DateTimeOffset? DateOfBirth { get; set; }
 

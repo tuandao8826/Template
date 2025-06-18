@@ -4,13 +4,16 @@ using Infrastructure;
 try
 {
 	var builder = WebApplication.CreateBuilder(args);
+	var configuration = builder.Configuration;
 
 	builder.Services.AddControllers();
 	builder.Services.AddEndpointsApiExplorer();
 	builder.Services.AddSwaggerGen();
 
+	#region Dependencies
 	builder.Services.AddInfrastructure();
-	builder.Services.AddApplication();
+	builder.Services.AddApplication(); 
+	#endregion
 
 	var app = builder.Build();
 

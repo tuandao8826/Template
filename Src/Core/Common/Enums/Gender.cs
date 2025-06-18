@@ -2,9 +2,18 @@
 
 public enum Gender
 {
+	/// <summary>
+	/// Nam
+	/// </summary>
 	Male = 1,
 
+	/// <summary>
+	/// Nữ
+	/// </summary>
 	Female = 2,
 
-	Unknown = 3
+	/// <summary>
+	/// Khác
+	/// </summary>
+	Other = 3
 }

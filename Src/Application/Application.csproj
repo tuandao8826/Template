@@ -7,12 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Common\Interfaces\Integrations\Aws\" />
+    <Folder Include="Common\Interfaces\Integrations\Cache\" />
+    <Folder Include="Common\Interfaces\Integrations\ElasticSearch\" />
     <Folder Include="Modules\Users\Commands\" />
     <Folder Include="Modules\Users\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
   </ItemGroup>
 
 </Project>
