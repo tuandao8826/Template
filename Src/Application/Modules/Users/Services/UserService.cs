@@ -1,16 +1,64 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.Common.Definitions;
+using Application.Common.Extensions;
+using Application.Common.Interfaces.Persistence;
+using Application.Common.Responses;
+using Application.Modules.Users.Entities;
+using Application.Modules.Users.Requests.Users;
+using Application.Modules.Users.Responses.Users;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
-namespace Application.Modules.Users.Services
+namespace Application.Modules.Users.Services;
+
+public interface IUserService
 {
-	public interface IUserService
+	Task<UserResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default);
+
+	Task<UserResponse> UpdateAsync(Guid userId, UpdateUserRequest request, CancellationToken cancellationToken = default);
+
+	Task<MultipleIdentiferResponse> DeleteRangeAsync(DeleteRangeUserRequest request, CancellationToken cancellationToken = default);
+
+	Task<UserResponse> GetDetailAsync(Guid userId, CancellationToken cancellationToken = default);
+}
+
+public class UserService(IUnitOfWork unitOfWork, IMapper mapper) : IUserService
+{
+	public async Task<UserResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default)
 	{
+		User user = mapper.Map<User>(request);
+		user.Password = PasswordExtension.Hash(request.Password);
+
+		await unitOfWork.Repository<User>().AddAsync(user, cancellationToken);
+		return await GetDetailAsync(user.Id, cancellationToken);
 	}
 
-	public class UserService : IUserService
+	public async Task<UserResponse> UpdateAsync(Guid userId, UpdateUserRequest request, CancellationToken cancellationToken = default)
 	{
-    }
+		User user = await unitOfWork.Repository<User>()
+			.Find(x => x.Id == userId)
+			.FirstOrDefaultAsync(cancellationToken) ?? throw new BadHttpRequestException(Message<User>.NotFound(), 400);
+		mapper.Map(request, user);
+		user.Password = PasswordExtension.Hash(request.Password);
+
+		await unitOfWork.Repository<User>().UpdateAsync(user, cancellationToken);
+		return mapper.Map<UserResponse>(user);
+	}
+
+	public async Task<MultipleIdentiferResponse> DeleteRangeAsync(DeleteRangeUserRequest request, CancellationToken cancellationToken = default)
+	{
+		await unitOfWork.Repository<User>().Find(x => request.Ids!.Contains(x.Id)).ExecuteDeleteAsync(cancellationToken);
+
+		return new MultipleIdentiferResponse(request.Ids!);
+	}
+
+	public async Task<UserResponse> GetDetailAsync(Guid userId, CancellationToken cancellationToken = default)
+	{
+		return await unitOfWork.Repository<User>()
+			.Find(x => x.Id == userId)
+			.AsNoTracking()
+			.ProjectTo<UserResponse>(mapper.ConfigurationProvider)
+			.FirstOrDefaultAsync(cancellationToken) ?? throw new BadHttpRequestException(Message<User>.NotFound(), 400);
+	}
 }

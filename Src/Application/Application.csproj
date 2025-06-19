@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Modules\Users\Commands\**" />
+    <Compile Remove="Modules\Users\Queries\**" />
+    <EmbeddedResource Remove="Modules\Users\Commands\**" />
+    <EmbeddedResource Remove="Modules\Users\Queries\**" />
+    <None Remove="Modules\Users\Commands\**" />
+    <None Remove="Modules\Users\Queries\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
@@ -14,11 +23,12 @@
     <Folder Include="Common\Interfaces\Integrations\Aws\" />
     <Folder Include="Common\Interfaces\Integrations\Cache\" />
     <Folder Include="Common\Interfaces\Integrations\ElasticSearch\" />
-    <Folder Include="Modules\Users\Commands\" />
-    <Folder Include="Modules\Users\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
