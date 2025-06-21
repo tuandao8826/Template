@@ -1,7 +1,7 @@
-﻿using Application.Common.ApiWrappers;
+﻿using Application.Common.ApiWrapper;
 using Core.Bases;
 
-namespace Application.Common.ApiWrappers;
+namespace Application.Common.ApiWrapper;
 
 public class ErrorResultResponse<TData> : ApiBaseResponse<TData>
 {

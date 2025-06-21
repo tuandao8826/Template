@@ -1,6 +1,6 @@
 using Api.Common.ControllerWrappers;
 using Api.Tests.Entities;
-using Application.Common.ApiWrappers;
+using Application.Common.ApiWrapper;
 using Application.Common.Definitions;
 using Application.Modules.Users.Entities;
 using Microsoft.AspNetCore.Mvc;

@@ -1,18 +1,32 @@
 ﻿using Application.Common.Interfaces.Persistence;
+using Infrastructure.Persistence.Configurations;
+using Infrastructure.Persistence.Contexts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace Infrastructure.Persistence;
 
 internal static class Startup
 {
-	public static IServiceCollection AddPersistence(this IServiceCollection services)
+	public static IServiceCollection AddPersistence(this IServiceCollection services, IConfiguration configuration)
 	{
-		//services.AddScoped<IUnitOfWork, UnitOfWork>();
+		services.AddOptions<DatabaseSettings>()
+			.Bind(configuration.GetSection(nameof(DatabaseSettings)))
+			.ValidateDataAnnotations();
+
+		services.AddDbContextPool<ApplicationDbContext>((serviceProvider, options) =>
+		{
+			var sqlSettings = serviceProvider.GetRequiredService<IOptions<DatabaseSettings>>().Value.SqlSettings;
+			string defaultConnection = sqlSettings.ConnectionStrings.DefaultConnection;
+			options.UseNpgsql(
+				defaultConnection,
+				optionBuilder => optionBuilder.MigrationsAssembly($"Migrators.{sqlSettings.Provider}")
+			);
+		});
+
+		services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 		return services;
 	}

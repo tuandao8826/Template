@@ -1,3 +1,4 @@
+using Api.Configurations;
 using Application;
 using Infrastructure;
 
@@ -6,12 +7,16 @@ try
 	var builder = WebApplication.CreateBuilder(args);
 	var configuration = builder.Configuration;
 
+	#region Configurations
+	builder.AddConfiguration(); 
+	#endregion
+
 	builder.Services.AddControllers();
 	builder.Services.AddEndpointsApiExplorer();
 	builder.Services.AddSwaggerGen();
 
 	#region Dependencies
-	builder.Services.AddInfrastructure();
+	builder.Services.AddInfrastructure(configuration);
 	builder.Services.AddApplication(); 
 	#endregion
 

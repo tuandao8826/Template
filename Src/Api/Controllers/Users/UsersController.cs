@@ -1,5 +1,5 @@
 ﻿using Api.Common.ControllerWrappers;
-using Application.Common.ApiWrappers;
+using Application.Common.ApiWrapper;
 using Application.Common.Definitions;
 using Application.Common.Responses;
 using Application.Modules.Users.Entities;

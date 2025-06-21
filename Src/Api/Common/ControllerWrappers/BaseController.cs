@@ -1,4 +1,4 @@
-﻿using Application.Common.ApiWrappers;
+﻿using Application.Common.ApiWrapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Common.ControllerWrappers;

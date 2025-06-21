@@ -1,4 +1,5 @@
-﻿using Core.Bases;
+﻿using Application.Common.Helpers;
+using Core.Bases;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -7,7 +8,7 @@ namespace Application.Common.Extensions;
 public static class ConfigurationExtension
 {
 	public static EntityTypeBuilder<T> UseDefaultTableNaming<T>(this EntityTypeBuilder<T> builder) where T : class
-		=> builder.ToTable(typeof(T).Name);
+		=> builder.ToTable(NamingConventionHelper.ToSnakeCase(typeof(T).Name));
 
 	public static EntityTypeBuilder<T> HasBaseEntity<T>(this EntityTypeBuilder<T> builder) where T : BaseEntity
 	{

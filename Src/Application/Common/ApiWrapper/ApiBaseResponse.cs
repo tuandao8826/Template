@@ -1,4 +1,4 @@
-﻿namespace Application.Common.ApiWrappers;
+﻿namespace Application.Common.ApiWrapper;
 
 public abstract class ApiBaseResponse<TData>
 {
