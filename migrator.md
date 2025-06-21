@@ -35,7 +35,7 @@ Add-Migration -Context ApplicationDbContext
 
 ---
 
-## 🧱 Step 4: Update the Database
+## 🔄 Step 4: Update the Database
 
 To apply the migration and create/update the database schema, run:
 
