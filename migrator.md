@@ -26,6 +26,7 @@ Ex: Migrators/Migrators.PostgreSql
 
 ## 🧱 Step 3: Create a Migration
 
+**Note**: Make sure to configure the database path in Src/Configurations/databases.json.
 To create a new migration file based on changes in your models, run the following command:
 
 ```powershell
