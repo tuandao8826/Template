@@ -1,5 +1,7 @@
+using Api.Common.Swagger;
 using Api.Configurations;
 using Application;
+using Figgle.Fonts;
 using Infrastructure;
 
 try
@@ -7,13 +9,17 @@ try
 	var builder = WebApplication.CreateBuilder(args);
 	var configuration = builder.Configuration;
 
-	#region Configurations
-	builder.AddConfiguration(); 
-	#endregion
-
 	builder.Services.AddControllers();
 	builder.Services.AddEndpointsApiExplorer();
-	builder.Services.AddSwaggerGen();
+	//builder.Services.AddSwaggerGen();
+
+	#region Swagger
+	builder.Services.AddSwaggerSetup();
+	#endregion
+
+	#region Configurations
+	builder.AddConfiguration();
+	#endregion
 
 	#region Dependencies
 	builder.Services.AddInfrastructure(configuration);
@@ -25,7 +31,11 @@ try
 	if (app.Environment.IsDevelopment())
 	{
 		app.UseSwagger();
-		app.UseSwaggerUI();
+		app.UseSwaggerUI(options =>
+		{
+			options.SwaggerEndpoint("/swagger/Public/swagger.json", "Customer API");
+			options.SwaggerEndpoint("/swagger/Admin/swagger.json", "Admin API");
+		});
 	}
 
 	app.UseAuthorization();

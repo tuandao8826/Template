@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Common.ControllerWrappers;
 
-[Route("api/[controller]")]
+[Route("api/[area]/[controller]")]
 [ApiController]
-public class BaseController : ControllerBase
+[Area("Admin")]
+[ApiExplorerSettings(GroupName = "Admin")]
+public class AdminBaseController : ControllerBase
 {
     protected ActionResult<SuccessResultResponse<TData>> ResultResponse<TData>(TData? data, string message)
     {

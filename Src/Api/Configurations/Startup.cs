@@ -1,21 +1,24 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Application.Common.Extensions;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace Api.Configurations;
 
 public static class Startup
 {
-	private const string Databases = "databases";
-
 	public static WebApplicationBuilder AddConfiguration(this WebApplicationBuilder builder)
 	{
 		var envName = builder.Environment.EnvironmentName;
+		ConsoleExtension.WriteLine("Environment", $"Current Environment: {envName}");
 
 		builder.Configuration
-			.AddJsonFile(envName, Databases);
+			.AddJsonFile(envName, "appsettings")
+			.AddJsonFile(envName, "databases");
+
 		return builder;
 	}
 
-	private static IConfigurationBuilder AddJsonFile(this ConfigurationManager configuration, string envName, string fileName, bool optional = false, bool reloadOnChange = true)
+	private static IConfigurationBuilder AddJsonFile(this IConfigurationBuilder configuration, string envName, string fileName, bool optional = false, bool reloadOnChange = true)
 	{
 		const string path = "Configurations";
 

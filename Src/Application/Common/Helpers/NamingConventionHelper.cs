@@ -4,6 +4,9 @@ namespace Application.Common.Helpers;
 
 public static class NamingConventionHelper
 {
+	/// <summary>
+	/// Ex: RolePermission -> role_permission
+	/// </summary>
 	public static string ToSnakeCase(string text)
 	{
 		if (string.IsNullOrEmpty(text))

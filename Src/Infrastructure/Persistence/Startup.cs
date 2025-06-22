@@ -1,4 +1,5 @@
-﻿using Application.Common.Interfaces.Persistence;
+﻿using Application.Common.Extensions;
+using Application.Common.Interfaces.Persistence;
 using Infrastructure.Persistence.Configurations;
 using Infrastructure.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -16,15 +17,19 @@ internal static class Startup
 			.Bind(configuration.GetSection(nameof(DatabaseSettings)))
 			.ValidateDataAnnotations();
 
+		string dbProvider = "PostgreSql";
 		services.AddDbContextPool<ApplicationDbContext>((serviceProvider, options) =>
 		{
 			var sqlSettings = serviceProvider.GetRequiredService<IOptions<DatabaseSettings>>().Value.SqlSettings;
 			string defaultConnection = sqlSettings.ConnectionStrings.DefaultConnection;
+			dbProvider = sqlSettings.Provider;
 			options.UseNpgsql(
 				defaultConnection,
 				optionBuilder => optionBuilder.MigrationsAssembly($"Migrators.{sqlSettings.Provider}")
 			);
 		});
+
+		ConsoleExtension.WriteLine("Database", $"Connected to database: {dbProvider}");
 
 		services.AddScoped<IUnitOfWork, UnitOfWork>();
 
