@@ -7,6 +7,7 @@
             }
         },
         "RedisSettings": {
+            "Prefix": "your_prefix",
             "ConnectionStrings": {
                 "DefaultConnection": "127.0.0.1:6379,password=[your_password]"
             }

@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Integrations\Cache\" />
     <Folder Include="Integrations\Aws\" />
     <Folder Include="Integrations\ElastichSearch\" />
   </ItemGroup>

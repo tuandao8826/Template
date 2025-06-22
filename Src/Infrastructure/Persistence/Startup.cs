@@ -1,4 +1,4 @@
-﻿using Application.Common.Extensions;
+﻿using Application.Common.Helpers;
 using Application.Common.Interfaces.Persistence;
 using Infrastructure.Persistence.Configurations;
 using Infrastructure.Persistence.Contexts;
@@ -29,7 +29,7 @@ internal static class Startup
 			);
 		});
 
-		ConsoleExtension.WriteLine("Database", $"Connected to database: {dbProvider}");
+		ConsoleHelper.WriteLine("Database", $"Connected to database: {dbProvider}");
 
 		services.AddScoped<IUnitOfWork, UnitOfWork>();
 

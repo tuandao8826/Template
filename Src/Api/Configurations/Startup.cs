@@ -1,4 +1,4 @@
-﻿using Application.Common.Extensions;
+﻿using Application.Common.Helpers;
 using Figgle.Fonts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
@@ -16,7 +16,7 @@ public static class Startup
 			.AddJsonFile(envName, "databases");
 
 		Console.WriteLine(FiggleFonts.Slant.Render(builder.Configuration["ApplicationInfos:Name"] ?? "Hello World!"));
-		ConsoleExtension.WriteLine("Environment", $"Current Environment: {envName}");
+		ConsoleHelper.WriteLine("Environment", $"Current Environment: {envName}");
 
 		return builder;
 	}
