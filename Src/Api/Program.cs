@@ -31,8 +31,8 @@ try
 		app.UseSwagger();
 		app.UseSwaggerUI(options =>
 		{
-			options.SwaggerEndpoint("/swagger/Public/swagger.json", "Customer API");
 			options.SwaggerEndpoint("/swagger/Admin/swagger.json", "Admin API");
+			options.SwaggerEndpoint("/swagger/Public/swagger.json", "Public API");
 		});
 	}
 

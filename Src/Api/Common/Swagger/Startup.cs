@@ -8,9 +8,9 @@ public static class Startup
 	{
 		services.AddSwaggerGen(options =>
 		{
-			options.SwaggerDoc("Public", new OpenApiInfo { Title = "Public API", Version = "v1" });
-
 			options.SwaggerDoc("Admin", new OpenApiInfo { Title = "Admin API", Version = "v1" });
+
+			options.SwaggerDoc("Public", new OpenApiInfo { Title = "Public API", Version = "v1" });
 
 			options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
 			{
