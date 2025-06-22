@@ -14,11 +14,11 @@ namespace Application.Modules.Users.Requests.Users;
 [DisplayName(nameof(User))]
 public class UserRequest
 {
-	public string Username { get; set; } = default!;
+	public string? Username { get; set; }
 
-	public string Password { get; set; } = default!;
+	public string? Password { get; set; }
 
-	public string Name { get; set; } = default!;
+	public string? Name { get; set; }
 
 	public string? Email { get; set; }
 

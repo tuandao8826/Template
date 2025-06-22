@@ -22,5 +22,7 @@ public class PermissionConfiguration : IEntityTypeConfiguration<Permission>
 		builder.UseDefaultTableNaming();
 
 		builder.HasKey(x => x.Code);
+
+		builder.HasCitextUnique(x => x.Code);
 	}
 }

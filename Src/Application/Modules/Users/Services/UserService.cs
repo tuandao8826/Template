@@ -1,5 +1,6 @@
 ﻿using Application.Common.Definitions;
 using Application.Common.Extensions;
+using Application.Common.Interfaces.DependencyInjection;
 using Application.Common.Interfaces.Persistence;
 using Application.Common.Responses;
 using Application.Modules.Users.Entities;
@@ -12,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Modules.Users.Services;
 
-public interface IUserService
+public interface IUserService : IScopedService
 {
 	Task<UserResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default);
 
@@ -27,8 +28,9 @@ public class UserService(IUnitOfWork unitOfWork, IMapper mapper) : IUserService
 {
 	public async Task<UserResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default)
 	{
+
 		User user = mapper.Map<User>(request);
-		user.Password = PasswordExtension.Hash(request.Password);
+		user.Password = PasswordExtension.Hash(request.Password!);
 
 		await unitOfWork.Repository<User>().AddAsync(user, cancellationToken);
 		return await GetDetailAsync(user.Id, cancellationToken);
@@ -40,7 +42,7 @@ public class UserService(IUnitOfWork unitOfWork, IMapper mapper) : IUserService
 			.Find(x => x.Id == userId)
 			.FirstOrDefaultAsync(cancellationToken) ?? throw new BadHttpRequestException(Message<User>.NotFound(), 400);
 		mapper.Map(request, user);
-		user.Password = PasswordExtension.Hash(request.Password);
+		user.Password = PasswordExtension.Hash(request.Password!);
 
 		await unitOfWork.Repository<User>().UpdateAsync(user, cancellationToken);
 		return mapper.Map<UserResponse>(user);

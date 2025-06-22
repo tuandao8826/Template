@@ -7,11 +7,9 @@ namespace Application.Modules.Users.Responses.Users;
 
 public class UserBaseResponse : BaseEntity
 {
-    public string Username { get; set; } = default!;
+	public string? Username { get; set; }
 
-    public string Password { get; set; } = default!;
-
-    public string Name { get; set; } = default!;
+    public string? Name { get; set; }
 
     public string? Email { get; set; }
 

@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Application.Common.Interfaces.DependencyInjection;
+using Application.Common.Mapping;
+using Application.Common.Validations;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application;
@@ -16,7 +18,10 @@ public static class Startup
 
 	private static IServiceCollection AddApplicationCommon(this IServiceCollection services)
 	{
-		return services;
+		return services
+			.AddAutoRegisteredServices()
+			.AddMappingProfiles()
+			.AddFluentValidation();
 	}
 
 	private static IServiceCollection AddApplicationModule(this IServiceCollection services)

@@ -13,13 +13,13 @@ namespace Api.Controllers.Admin.Users;
 public class UsersController(IUserService userService) : AdminBaseController
 {
     [HttpPost]
-    public async Task<ActionResult<SuccessResultResponse<UserResponse>>> CreateAsync([FromBody] CreateUserRequest request, CancellationToken cancellationToken = default)
+    public async Task<ActionResult<SuccessResultResponse<UserResponse>>> CreateAsync([FromForm] CreateUserRequest request, CancellationToken cancellationToken = default)
     {
         return ResultResponse(await userService.CreateAsync(request, cancellationToken), Message<User>.Create());
     }
 
     [HttpPut("{id:guid}")]
-    public async Task<ActionResult<SuccessResultResponse<UserResponse>>> UpdateAsync([FromRoute] Guid id, [FromBody] UpdateUserRequest request, CancellationToken cancellationToken = default)
+    public async Task<ActionResult<SuccessResultResponse<UserResponse>>> UpdateAsync([FromForm] Guid id, [FromBody] UpdateUserRequest request, CancellationToken cancellationToken = default)
     {
         return ResultResponse(await userService.UpdateAsync(id, request, cancellationToken), Message<User>.Update());
     }
