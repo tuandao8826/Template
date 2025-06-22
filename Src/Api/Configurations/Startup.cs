@@ -1,4 +1,5 @@
 ﻿using Application.Common.Extensions;
+using Figgle.Fonts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
@@ -9,11 +10,13 @@ public static class Startup
 	public static WebApplicationBuilder AddConfiguration(this WebApplicationBuilder builder)
 	{
 		var envName = builder.Environment.EnvironmentName;
-		ConsoleExtension.WriteLine("Environment", $"Current Environment: {envName}");
 
 		builder.Configuration
 			.AddJsonFile(envName, "appsettings")
 			.AddJsonFile(envName, "databases");
+
+		Console.WriteLine(FiggleFonts.Slant.Render(builder.Configuration["ApplicationInfos:Name"] ?? "Hello World!"));
+		ConsoleExtension.WriteLine("Environment", $"Current Environment: {envName}");
 
 		return builder;
 	}

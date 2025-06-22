@@ -1,7 +1,6 @@
 using Api.Common.Swagger;
 using Api.Configurations;
 using Application;
-using Figgle.Fonts;
 using Infrastructure;
 
 try
@@ -11,7 +10,6 @@ try
 
 	builder.Services.AddControllers();
 	builder.Services.AddEndpointsApiExplorer();
-	//builder.Services.AddSwaggerGen();
 
 	#region Swagger
 	builder.Services.AddSwaggerSetup();
