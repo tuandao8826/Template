@@ -21,7 +21,7 @@ try
 
 	#region Dependencies
 	builder.Services.AddInfrastructure(configuration);
-	builder.Services.AddApplication(); 
+	builder.Services.AddApplication(configuration); 
 	#endregion
 
 	var app = builder.Build();

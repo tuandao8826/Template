@@ -1,5 +1,6 @@
 ﻿using Api.Common.ControllerWrappers;
 using Application.Common.ApiWrapper;
+using Application.Common.Auths.ApiKeys;
 using Application.Common.Definitions;
 using Application.Common.Responses;
 using Application.Modules.Users.Entities;
@@ -13,6 +14,7 @@ namespace Api.Controllers.Admin.Users;
 public class UsersController(IUserService userService) : AdminBaseController
 {
     [HttpPost]
+    [ApiKey]
     public async Task<ActionResult<SuccessResultResponse<UserResponse>>> CreateAsync([FromForm] CreateUserRequest request, CancellationToken cancellationToken = default)
     {
         return ResultResponse(await userService.CreateAsync(request, cancellationToken), Message<User>.Create());

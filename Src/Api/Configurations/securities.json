@@ -1,0 +1,23 @@
+{
+    "SecuritySettings": {
+        "JwtTokenProfiles": {
+            "Admin": {
+                "ValidAudience": "http://localhost:4200",
+                "ValidIssuer": "http://localhost:5000",
+                "SecretKey": "admin-secret-placeholder",
+                "TokenValidityInMinutes": 15,
+                "RefreshTokenValidityInDays": 1
+            },
+            "Public": {
+                "ValidAudience": "http://localhost:4200",
+                "ValidIssuer": "http://localhost:5000",
+                "SecretKey": "public-secret-placeholder",
+                "TokenValidityInMinutes": 60,
+                "RefreshTokenValidityInDays": 7
+            }
+        },
+        "ApiKeySettings": {
+            "Default": "api-key-placeholder"
+        }
+    }
+}

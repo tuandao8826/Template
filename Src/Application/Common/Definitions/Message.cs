@@ -1,4 +1,4 @@
-﻿using Application.Common.Helpers;
+﻿using Application.Common.Extensions;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -101,7 +101,7 @@ public static class Message<T>
 		=> BuildMessage(type.ToString(), propName);
 
 	public static string Action(MessageErrorType type, Expression<Func<T, object?>> propExpression)
-		=> BuildMessage(type.ToString(), ReflectionHelper.GetPropertyName<T>(propExpression));
+		=> BuildMessage(type.ToString(), propExpression.GetPropertyName());
 
 	private static string BuildMessage(string type, bool status)
 		=> BuildMessage(type, status ? Success : Fail);

@@ -1,13 +1,13 @@
 ﻿using System.Text;
 
-namespace Application.Common.Helpers;
+namespace Application.Common.Extensions;
 
-public static class NamingConventionHelper
+public static class NamingConventionExtention
 {
 	/// <summary>
 	/// Ex: RolePermission -> role_permission
 	/// </summary>
-	public static string ToSnakeCase(string text)
+	public static string ToSnakeCase(this string text)
 	{
 		if (string.IsNullOrEmpty(text))
 		{

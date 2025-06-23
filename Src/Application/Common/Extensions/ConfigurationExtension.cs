@@ -9,7 +9,7 @@ namespace Application.Common.Extensions;
 public static class ConfigurationExtension
 {
 	public static EntityTypeBuilder<T> UseDefaultTableNaming<T>(this EntityTypeBuilder<T> builder) where T : class
-		=> builder.ToTable(NamingConventionHelper.ToSnakeCase(typeof(T).Name));
+		=> builder.ToTable(typeof(T).Name.ToSnakeCase());
 
 	public static EntityTypeBuilder<T> HasBaseEntity<T>(this EntityTypeBuilder<T> builder) where T : BaseEntity
 	{
