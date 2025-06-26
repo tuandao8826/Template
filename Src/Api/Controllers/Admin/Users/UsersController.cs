@@ -1,7 +1,7 @@
 ﻿using Api.Common.ControllerWrappers;
 using Application.Common.ApiWrapper;
 using Application.Common.Auths.ApiKeys;
-using Application.Common.Definitions;
+using Application.Common.Definitions.Messages;
 using Application.Common.Responses;
 using Application.Modules.Users.Entities;
 using Application.Modules.Users.Requests.Users;

@@ -1,4 +1,4 @@
-﻿using Application.Common.Definitions;
+﻿using Application.Common.Definitions.Messages;
 using Application.Modules.Users.Entities;
 using FluentValidation;
 

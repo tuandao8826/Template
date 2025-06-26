@@ -1,4 +1,4 @@
-﻿using Application.Common.Definitions;
+﻿using Application.Common.Definitions.Messages;
 using Application.Common.Extensions;
 using Application.Common.Interfaces.Persistence;
 using Application.Modules.Roles.Entities;
