@@ -17,7 +17,7 @@ public static class Startup
 			.AddJsonFile(envName, "securities");
 
 		Console.WriteLine(FiggleFonts.Slant.Render(builder.Configuration["ApplicationInfos:Name"] ?? "Hello World!"));
-		ConsoleHelper.WriteLine("Environment", $"Current Environment: {envName}");
+		ConsoleHelper.WriteLine("[Environment]", $"Current Environment: {envName}");
 
 		return builder;
 	}

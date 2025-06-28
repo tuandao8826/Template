@@ -30,9 +30,18 @@ public enum MessageErrorType
 	/// </summary>
 	Duplicate,
 
+	/// <summary>
+	/// Used when the provided data exceeds the maximum allowed length.
+	/// </summary>
 	TooLong,
 
+	/// <summary>
+	/// Used when the provided data is below the minimum required length.
+	/// </summary>
 	TooShort,
 
+	/// <summary>
+	/// Used when the provided data is invalid or improperly formatted.
+	/// </summary>
 	Invalid,
 }

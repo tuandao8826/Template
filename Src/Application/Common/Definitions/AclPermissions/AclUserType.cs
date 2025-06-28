@@ -1,12 +1,8 @@
 ﻿namespace Application.Common.Definitions.AclPermissions;
 
-public static class AclUserType
+public enum AclUserType
 {
-	public const string Admin = nameof(Admin);
-	public const string Customer = nameof(Customer);
+	Admin = 1,
 
-	public static string[] Of(params string[] types)
-	{
-		return types;
-	}
+	Public = 2,
 }

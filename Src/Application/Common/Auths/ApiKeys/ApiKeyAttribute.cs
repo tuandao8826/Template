@@ -9,13 +9,11 @@ namespace Application.Common.Auths.ApiKeys;
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 public class ApiKeyAttribute(string keyName = nameof(ApiKeySettings.Default)) : Attribute, IAuthorizationFilter
 {
-	private readonly string ApiKeyHeader = "X-Api-Key";
-
     public void OnAuthorization(AuthorizationFilterContext context)
 	{
 		var request = context.HttpContext.Request;
 
-		if (!request.Headers.TryGetValue(ApiKeyHeader, out var providedApiKey) || string.IsNullOrEmpty(providedApiKey))
+		if (!request.Headers.TryGetValue(ApiKeyHeader.XApiKey, out var providedApiKey) || string.IsNullOrEmpty(providedApiKey))
 		{
 			context.Result = new UnauthorizedObjectResult("API Key was not provided.");
 			return;
@@ -36,4 +34,9 @@ public class ApiKeyAttribute(string keyName = nameof(ApiKeySettings.Default)) : 
 			return;
 		}
 	}
+}
+
+public static class ApiKeyHeader
+{
+	public static readonly string XApiKey = "X-Api-Key";
 }

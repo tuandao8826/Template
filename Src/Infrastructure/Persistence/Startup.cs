@@ -29,7 +29,7 @@ internal static class Startup
 			);
 		});
 
-		ConsoleHelper.WriteLine("Database", $"Connected to database: {dbProvider}");
+		ConsoleHelper.WriteLine("[Database]", $"Connected to database: {dbProvider}");
 
 		services.AddScoped<IUnitOfWork, UnitOfWork>();
 

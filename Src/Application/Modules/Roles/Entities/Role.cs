@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Application.Modules.Roles.Entities;
 
-public class Role(string code, string? name, string? description) : BaseEntity, ICode
+public class Role : BaseEntity, ICode
 {
-	public string? Code { get; set; } = code;
+	public string? Code { get; set; } = default!;
 
-	public string? Name { get; set; } = name;
+	public string Name { get; set; } = default!;
 
-	public string? Description { get; set; } = description;
+	public string? Description { get; set; }
 
 	public ICollection<RolePermission>? RolePermissions { get; set; }
 }

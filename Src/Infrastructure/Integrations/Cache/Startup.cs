@@ -18,7 +18,7 @@ internal static class Startup
 			return multiplexer;
 		});
 
-		ConsoleHelper.WriteLine("Redis", $"Connected to redis.");
+		ConsoleHelper.WriteLine("[Redis]", $"Connected to redis.");
 
 		services.AddScoped<IRedisService, RedisService>();
 

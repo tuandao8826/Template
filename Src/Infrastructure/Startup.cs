@@ -1,5 +1,5 @@
 ﻿using Infrastructure.Integrations.Cache;
-using Infrastructure.Persistence.Configurations;
+using Infrastructure.Persistence;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -1,6 +1,7 @@
 using Api.Common.Swagger;
 using Api.Configurations;
 using Application;
+using Application.Common.Seeders;
 using Infrastructure;
 
 try
@@ -25,6 +26,10 @@ try
 	#endregion
 
 	var app = builder.Build();
+
+	#region Seeder
+	await app.Services.InitializeSeedDataAsync(); 
+	#endregion
 
 	if (app.Environment.IsDevelopment())
 	{

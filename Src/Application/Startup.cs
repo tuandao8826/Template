@@ -2,6 +2,7 @@
 using Application.Common.Interfaces.DependencyInjection;
 using Application.Common.LazyLoading;
 using Application.Common.Mapping;
+using Application.Common.Seeders;
 using Application.Common.Validations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +23,7 @@ public static class Startup
 	private static IServiceCollection AddApplicationCommon(this IServiceCollection services, IConfiguration configuration)
 	{
 		return services
+			.AddSeeders()
 			.AddAuth(configuration)
 			.AddLazyLoading()
 			.AddAutoRegisteredServices()

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Application.Common.Seeders;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace Application.Common.Interfaces.DependencyInjection;
@@ -7,13 +8,34 @@ internal static class Startup
 {
 	public static IServiceCollection AddAutoRegisteredServices(this IServiceCollection services)
 	{
-		Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
-		Type[] allTypes = assemblies.SelectMany(x => x.GetTypes()).ToArray();
-		Type[] allTypeInterfaces = allTypes.Where(x => x.IsInterface).ToArray();
+		//Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+		//Type[] allTypes = assemblies.SelectMany(x => x.GetTypes()).ToArray();
+		//Type[] allTypeInterfaces = allTypes.Where(x => x.IsInterface).ToArray();
 
-		RegisterByMarker<IScopedService>(services, allTypes, allTypeInterfaces, ServiceLifetime.Scoped);
-		RegisterByMarker<ITransientService>(services, allTypes, allTypeInterfaces, ServiceLifetime.Transient);
-		RegisterByMarker<ISingletonService>(services, allTypes, allTypeInterfaces, ServiceLifetime.Singleton);
+		//RegisterByMarker<IScopedService>(services, allTypes, allTypeInterfaces, ServiceLifetime.Scoped);
+		//RegisterByMarker<ITransientService>(services, allTypes, allTypeInterfaces, ServiceLifetime.Transient);
+		//RegisterByMarker<ISingletonService>(services, allTypes, allTypeInterfaces, ServiceLifetime.Singleton);
+
+		services.Scan(scan => scan
+			.FromAssemblyOf<IScopedService>()
+			.AddClasses(classes => classes.AssignableTo<IScopedService>())
+			.AsImplementedInterfaces()
+			.WithScopedLifetime()
+		);
+
+		services.Scan(scan => scan
+			.FromAssemblyOf<ITransientService>()
+			.AddClasses(classes => classes.AssignableTo<ITransientService>())
+			.AsImplementedInterfaces()
+			.WithTransientLifetime()
+		);
+
+		services.Scan(scan => scan
+			.FromAssemblyOf<ISingletonService>()
+			.AddClasses(classes => classes.AssignableTo<ISingletonService>())
+			.AsImplementedInterfaces()
+			.WithSingletonLifetime()
+		);
 
 		return services;
 	}

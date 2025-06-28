@@ -7,7 +7,7 @@ public static class ConsoleHelper
     public static void WriteLine(string actionName, string message)
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.Write($"\n[{DateTimeOffset.UtcNow:yyyy-MM-dd HH:mm:ss}] ----> [{actionName}] ");
+        Console.Write($"\n[{DateTimeOffset.UtcNow:yyyy-MM-dd HH:mm:ss}] ----> {actionName} ");
         Console.ResetColor();
 
         Console.ForegroundColor = ConsoleColor.Gray;
