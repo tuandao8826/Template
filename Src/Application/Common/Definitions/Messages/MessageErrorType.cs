@@ -44,4 +44,6 @@ public enum MessageErrorType
 	/// Used when the provided data is invalid or improperly formatted.
 	/// </summary>
 	Invalid,
+
+	Blocked,
 }

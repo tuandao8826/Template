@@ -1,4 +1,7 @@
-﻿using Application.Common.Definitions.Messages;
+﻿using Application.Common.Auths.Configurations;
+using Application.Common.Auths.Jwt;
+using Application.Common.Auths.Services;
+using Application.Common.Definitions.Messages;
 using Application.Common.Extensions;
 using Application.Common.Interfaces.DependencyInjection;
 using Application.Common.Interfaces.Persistence;
@@ -10,10 +13,11 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Application.Modules.Users.Services;
 
-public interface IUserService : IScopedService
+public partial interface IUserService : IScopedService
 {
 	Task<UserResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default);
 
@@ -24,8 +28,16 @@ public interface IUserService : IScopedService
 	Task<UserResponse> GetDetailAsync(Guid userId, CancellationToken cancellationToken = default);
 }
 
-public class UserService(IUnitOfWork unitOfWork, IMapper mapper) : IUserService
+public partial class UserService(
+	IUnitOfWork unitOfWork,
+	IMapper mapper,
+	IJwtTokenService
+	jwtTokenService,
+	IOptions<SecuritySettings> securityOptions,
+	ICurrentUserService currentUserService) : IUserService
 {
+	private readonly JwtTokenProfiles jwtTokenProfiles = securityOptions.Value.JwtTokenProfiles;
+
 	public async Task<UserResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default)
 	{
 

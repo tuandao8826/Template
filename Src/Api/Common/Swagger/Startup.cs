@@ -9,7 +9,6 @@ public static class Startup
 		services.AddSwaggerGen(options =>
 		{
 			options.SwaggerDoc("Admin", new OpenApiInfo { Title = "Admin API", Version = "v1" });
-
 			options.SwaggerDoc("Public", new OpenApiInfo { Title = "Public API", Version = "v1" });
 
 			options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -22,20 +21,7 @@ public static class Startup
 				Scheme = "Bearer"
 			});
 
-			//options.AddSecurityRequirement(new OpenApiSecurityRequirement
-			//{
-			//	{
-			//		new OpenApiSecurityScheme
-			//		{
-			//			Reference = new OpenApiReference
-			//			{
-			//				Type = ReferenceType.SecurityScheme,
-			//				Id = "Bearer"
-			//			}
-			//		},
-			//		new string[] {}
-			//	}
-			//});
+			options.OperationFilter<AuthorizeCheckOperationFilter>();
 		});
 
 		return services;

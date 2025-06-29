@@ -7,18 +7,18 @@ public static class NamingConventionExtention
 	/// <summary>
 	/// Ex: RolePermission -> role_permission
 	/// </summary>
-	public static string ToSnakeCase(this string text)
+	public static string ToSnakeCase(this string str)
 	{
-		if (string.IsNullOrEmpty(text))
+		if (string.IsNullOrEmpty(str))
 		{
-			return text;
+			return str;
 		}
 
 		StringBuilder stringBuilder = new();
 
-		for (int i = 0; i < text.Length; i++)
+		for (int i = 0; i < str.Length; i++)
 		{
-			char character = text[i];
+			char character = str[i];
 
 			if (char.IsUpper(character))
 			{
@@ -32,5 +32,18 @@ public static class NamingConventionExtention
 		}
 
 		return stringBuilder.ToString();
+	}
+
+	/// <summary>
+	/// Ex: UserName -> userName
+	/// </summary>
+	public static string ToLowerFirst(this string str)
+	{
+		if (string.IsNullOrEmpty(str))
+		{
+			return str;
+		}
+
+		return char.ToLower(str[0]) + str[1..];
 	}
 }

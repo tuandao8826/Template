@@ -82,6 +82,9 @@ public static partial class Message<T>
 
     public static string Download(bool status = true)
         => Action(MessageActionType.Download, status);
+
+	public static string Login(bool status = true)
+		=> Action(MessageActionType.Login, status);
 }
 
 /// <summary>
@@ -139,4 +142,10 @@ public static partial class Message<T>
 
     public static string Invalid(string propName)
         => Action(MessageErrorType.Invalid, propName);
+
+	public static string Invalid()
+		=> Action(MessageErrorType.Invalid);
+
+	public static string Blocked()
+		=> Action(MessageErrorType.Blocked);
 }

@@ -24,7 +24,7 @@ public static class Startup
 	{
 		return services
 			.AddSeeders()
-			.AddAuth(configuration)
+			.AddAuthenticationSetup(configuration)
 			.AddLazyLoading()
 			.AddAutoRegisteredServices()
 			.AddMappingProfiles()

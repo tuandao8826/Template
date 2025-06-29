@@ -1,13 +1,13 @@
 ﻿namespace Application.Common.Auths.Jwt;
 
-internal class JwtTokenProfiles
+public class JwtTokenProfiles
 {
 	public JwtSettings Admin { get; set; } = new();
 
 	public JwtSettings Public { get; set; } = new();
 }
 
-internal class JwtSettings
+public class JwtSettings
 {
 	public string? ValidAudience { get; set; }
 
@@ -15,7 +15,7 @@ internal class JwtSettings
 
 	public string SecretKey { get; set; } = default!;
 
-	public int TokenValidityInMinutes { get; set; }
+	public double TokenValidityInMinutes { get; set; } = 60;
 
-	public int RefreshTokenValidityInDays { get; set; }
+	public double RefreshTokenValidityInDays { get; set; } = 1;
 }

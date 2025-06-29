@@ -1,6 +1,8 @@
 using Api.Common.Swagger;
 using Api.Configurations;
+using Api.Middlewares;
 using Application;
+using Application.Common.Helpers;
 using Application.Common.Seeders;
 using Infrastructure;
 
@@ -12,24 +14,23 @@ try
 	builder.Services.AddControllers();
 	builder.Services.AddEndpointsApiExplorer();
 
-	#region Swagger
+	#region Main dependencies
+	builder.AddConfiguration();
 	builder.Services.AddSwaggerSetup();
 	#endregion
 
-	#region Configurations
-	builder.AddConfiguration();
-	#endregion
-
-	#region Dependencies
+	#region Layers dependencies
 	builder.Services.AddInfrastructure(configuration);
 	builder.Services.AddApplication(configuration); 
 	#endregion
 
 	var app = builder.Build();
 
-	#region Seeder
-	await app.Services.InitializeSeedDataAsync(); 
+	#region Initialization
+	await app.Services.InitializeSeedDataAsync();
 	#endregion
+
+	
 
 	if (app.Environment.IsDevelopment())
 	{
@@ -41,6 +42,8 @@ try
 		});
 	}
 
+	app.UseAuthentication();
+	app.UseMiddlewares();
 	app.UseAuthorization();
 
 	app.MapControllers();
@@ -49,5 +52,5 @@ try
 }
 catch (Exception ex)
 {
-	Console.WriteLine($"-----> [Error] detail: {ex}");
+	ConsoleHelper.WriteLine("[Error]", $"Detail: {ex}");
 }

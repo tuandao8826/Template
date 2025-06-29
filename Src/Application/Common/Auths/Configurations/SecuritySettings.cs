@@ -3,9 +3,9 @@ using Application.Common.Auths.Jwt;
 
 namespace Application.Common.Auths.Configurations;
 
-internal class SecuritySettings
+public class SecuritySettings
 {
-	public JwtTokenProfiles JwtSettings { get; set; } = new();
+	public JwtTokenProfiles JwtTokenProfiles { get; set; } = new();
 
 	public ApiKeySettings ApiKeySettings { get; set; } = new();
 }

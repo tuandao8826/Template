@@ -44,4 +44,6 @@ public enum MessageActionType
 	/// Used when performing a search action within the application.
 	/// </summary>
 	Search,
+
+	Login,
 }

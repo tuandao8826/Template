@@ -7,12 +7,11 @@ using Application.Common.Seeders;
 using Application.Modules.Roles.Entities;
 using Application.Modules.Users.Entities;
 using AutoMapper;
-using Core.Bases.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Modules.Users.Seeders;
 
-public class UserSeeding(IUnitOfWork unitOfWork, IMapper mapper) : IDataSeeder
+public class AdminUserSeeding(IUnitOfWork unitOfWork, IMapper mapper) : IDataSeeder
 {
     public async Task SeedAsync(CancellationToken cancellationToken = default)
 	{

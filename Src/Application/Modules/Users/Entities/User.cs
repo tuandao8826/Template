@@ -1,4 +1,5 @@
 ﻿using Application.Common.Extensions;
+using Application.Common.Identity.Bases;
 using Application.Modules.Roles.Entities;
 using Core.Bases;
 using Core.Common.Enums;
@@ -7,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Application.Modules.Users.Entities;
 
-public class User : BaseEntity
+public class User : BaseEntity, IJwtUser
 {
 	public string Username { get; set; } = default!;
 
