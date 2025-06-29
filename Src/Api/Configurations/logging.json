@@ -1,0 +1,11 @@
+{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft": "Information",
+            "Microsoft.AspNetCore.Routing": "Warning",
+            "Microsoft.AspNetCore.Hosting": "Warning",
+            "Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor": "Warning"
+        }
+    }
+}

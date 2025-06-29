@@ -14,7 +14,8 @@ public static class Startup
 		builder.Configuration
 			.AddJsonFile(envName, "appsettings")
 			.AddJsonFile(envName, "databases")
-			.AddJsonFile(envName, "securities");
+			.AddJsonFile(envName, "securities")
+			.AddJsonFile(envName, "logging");
 
 		Console.WriteLine(FiggleFonts.Slant.Render(builder.Configuration["ApplicationInfos:Name"] ?? "Hello World!"));
 		ConsoleHelper.WriteLine("[Environment]", $"Current Environment: {envName}");

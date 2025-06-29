@@ -1,3 +1,4 @@
+using Api.Common.Logging;
 using Api.Common.Swagger;
 using Api.Configurations;
 using Api.Middlewares;
@@ -15,6 +16,7 @@ try
 	builder.Services.AddEndpointsApiExplorer();
 
 	#region Main dependencies
+	builder.AddLoggingSetup();
 	builder.AddConfiguration();
 	builder.Services.AddSwaggerSetup();
 	#endregion
@@ -29,8 +31,6 @@ try
 	#region Initialization
 	await app.Services.InitializeSeedDataAsync();
 	#endregion
-
-	
 
 	if (app.Environment.IsDevelopment())
 	{
