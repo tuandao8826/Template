@@ -3,7 +3,7 @@ using Application.Common.Requests;
 using Application.Modules.Users.Entities;
 using FluentValidation;
 
-namespace Application.Modules.Users.Requests.Users;
+namespace Application.Modules.Users.Bases.Requests.Users;
 
 public class DeleteRangeUserRequest : MultipleIdentiferRequest<Guid>
 {

@@ -6,9 +6,9 @@ using Application.Common.Extensions;
 using Application.Common.Interfaces.DependencyInjection;
 using Application.Common.Interfaces.Persistence;
 using Application.Common.Responses;
+using Application.Modules.Users.Bases.Requests.Users;
+using Application.Modules.Users.Bases.Responses.Users;
 using Application.Modules.Users.Entities;
-using Application.Modules.Users.Requests.Users;
-using Application.Modules.Users.Responses.Users;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Http;
@@ -19,13 +19,13 @@ namespace Application.Modules.Users.Services;
 
 public partial interface IUserService : IScopedService
 {
-	Task<UserResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default);
+	Task<UserDefaultResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default);
 
-	Task<UserResponse> UpdateAsync(Guid userId, UpdateUserRequest request, CancellationToken cancellationToken = default);
+	Task<UserDefaultResponse> UpdateAsync(Guid userId, UpdateUserRequest request, CancellationToken cancellationToken = default);
 
 	Task<MultipleIdentiferResponse> DeleteRangeAsync(DeleteRangeUserRequest request, CancellationToken cancellationToken = default);
 
-	Task<UserResponse> GetDetailAsync(Guid userId, CancellationToken cancellationToken = default);
+	Task<UserDefaultResponse> GetDetailAsync(Guid userId, CancellationToken cancellationToken = default);
 }
 
 public partial class UserService(
@@ -38,7 +38,7 @@ public partial class UserService(
 {
 	private readonly JwtTokenProfiles jwtTokenProfiles = securityOptions.Value.JwtTokenProfiles;
 
-	public async Task<UserResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default)
+	public async Task<UserDefaultResponse> CreateAsync(CreateUserRequest request, CancellationToken cancellationToken = default)
 	{
 
 		User user = mapper.Map<User>(request);
@@ -48,7 +48,7 @@ public partial class UserService(
 		return await GetDetailAsync(user.Id, cancellationToken);
 	}
 
-	public async Task<UserResponse> UpdateAsync(Guid userId, UpdateUserRequest request, CancellationToken cancellationToken = default)
+	public async Task<UserDefaultResponse> UpdateAsync(Guid userId, UpdateUserRequest request, CancellationToken cancellationToken = default)
 	{
 		User user = await unitOfWork.Repository<User>()
 			.Find(x => x.Id == userId)
@@ -57,7 +57,7 @@ public partial class UserService(
 		user.Password = PasswordExtension.Hash(request.Password!);
 
 		await unitOfWork.Repository<User>().UpdateAsync(user, cancellationToken);
-		return mapper.Map<UserResponse>(user);
+		return mapper.Map<UserDefaultResponse>(user);
 	}
 
 	public async Task<MultipleIdentiferResponse> DeleteRangeAsync(DeleteRangeUserRequest request, CancellationToken cancellationToken = default)
@@ -67,12 +67,12 @@ public partial class UserService(
 		return new MultipleIdentiferResponse(request.Ids!);
 	}
 
-	public async Task<UserResponse> GetDetailAsync(Guid userId, CancellationToken cancellationToken = default)
+	public async Task<UserDefaultResponse> GetDetailAsync(Guid userId, CancellationToken cancellationToken = default)
 	{
 		return await unitOfWork.Repository<User>()
 			.Find(x => x.Id == userId)
 			.AsNoTracking()
-			.ProjectTo<UserResponse>(mapper.ConfigurationProvider)
+			.ProjectTo<UserDefaultResponse>(mapper.ConfigurationProvider)
 			.FirstOrDefaultAsync(cancellationToken) ?? throw new BadHttpRequestException(Message<User>.NotFound(), 400);
 	}
 }

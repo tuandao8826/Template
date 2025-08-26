@@ -1,7 +1,7 @@
 ﻿using Application.Modules.Users.Entities;
 using AutoMapper;
 
-namespace Application.Modules.Users.Requests.Users;
+namespace Application.Modules.Users.Bases.Requests.Users;
 
 public class UpdateUserRequest : UserRequest
 {

@@ -2,9 +2,9 @@
 using Application.Modules.Users.Entities;
 using AutoMapper;
 
-namespace Application.Modules.Users.Responses.Users;
+namespace Application.Modules.Users.Bases.Responses.Users;
 
-public class UserResponse : UserBaseResponse
+public class UserDefaultResponse : UserBaseResponse
 {
     public RoleBaseResponse? Role { get; set; }
 }
@@ -13,6 +13,6 @@ public class UserMapping : Profile
 {
     public UserMapping()
     {
-        CreateMap<User, UserResponse>();
+        CreateMap<User, UserDefaultResponse>();
     }
 }

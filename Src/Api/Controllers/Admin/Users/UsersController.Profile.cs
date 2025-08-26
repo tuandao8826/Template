@@ -1,7 +1,7 @@
 ﻿using Application.Common.ApiWrapper;
 using Application.Common.Definitions.Messages;
+using Application.Modules.Users.Bases.Responses.Users;
 using Application.Modules.Users.Entities;
-using Application.Modules.Users.Responses.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,7 +11,7 @@ public partial class UsersController
 {
 	[HttpGet("Me")]
 	[Authorize]
-	public async Task<ActionResult<SuccessResultResponse<UserResponse>>> ProfileAsync(CancellationToken cancellationToken = default)
+	public async Task<ActionResult<SuccessResultResponse<UserDefaultResponse>>> ProfileAsync(CancellationToken cancellationToken = default)
 	{
 		return ResultResponse(await userService.GetProfileAsync(cancellationToken), Message<User>.Login());
 	}

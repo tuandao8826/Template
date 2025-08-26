@@ -3,11 +3,11 @@ using AutoMapper;
 using Core.Bases;
 using Core.Common.Enums;
 
-namespace Application.Modules.Users.Responses.Users;
+namespace Application.Modules.Users.Bases.Responses.Users;
 
 public class UserBaseResponse : BaseEntity
 {
-	public string? Username { get; set; }
+    public string? Username { get; set; }
 
     public string? Name { get; set; }
 

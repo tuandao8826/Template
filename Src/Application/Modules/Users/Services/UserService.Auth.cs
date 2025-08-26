@@ -1,8 +1,8 @@
 ﻿using Application.Common.Definitions.Messages;
 using Application.Common.Extensions;
 using Application.Common.Identity.Responses;
+using Application.Modules.Users.Bases.Requests.Auths;
 using Application.Modules.Users.Entities;
-using Application.Modules.Users.Requests.Auths;
 using Core.Common.Enums;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;

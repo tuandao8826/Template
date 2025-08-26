@@ -2,6 +2,7 @@
 using Application.Common.Interfaces.DependencyInjection;
 using Application.Common.LazyLoading;
 using Application.Common.Mapping;
+using Application.Common.MediatR;
 using Application.Common.Seeders;
 using Application.Common.Validations;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +29,8 @@ public static class Startup
 			.AddLazyLoading()
 			.AddAutoRegisteredServices()
 			.AddMappingProfiles()
-			.AddFluentValidation();
+			.AddFluentValidation()
+			.AddMediatRSetup();
 	}
 
 	private static IServiceCollection AddApplicationModule(this IServiceCollection services)

@@ -1,8 +1,8 @@
 ﻿using Application.Common.ApiWrapper;
 using Application.Common.Definitions.Messages;
 using Application.Common.Identity.Responses;
+using Application.Modules.Users.Bases.Requests.Auths;
 using Application.Modules.Users.Entities;
-using Application.Modules.Users.Requests.Auths;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.Admin.Users;
