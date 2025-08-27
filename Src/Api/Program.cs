@@ -1,3 +1,4 @@
+﻿using Api.Common.ApiVersioning;
 using Api.Common.Logging;
 using Api.Common.Swagger;
 using Api.Configurations;
@@ -15,18 +16,22 @@ try
 	builder.Services.AddControllers();
 	builder.Services.AddEndpointsApiExplorer();
 
-	#region Main dependencies
-	builder.AddLoggingSetup();
+    #region ApiVersioning
+    builder.Services.AddApiVersioningSetup();
+    #endregion
+
+    #region Main dependencies
+    builder.AddLoggingSetup();
 	builder.AddConfiguration();
 	builder.Services.AddSwaggerSetup();
 	#endregion
 
 	#region Layers dependencies
 	builder.Services.AddInfrastructure(configuration);
-	builder.Services.AddApplication(configuration); 
-	#endregion
+	builder.Services.AddApplication(configuration);
+    #endregion
 
-	var app = builder.Build();
+    var app = builder.Build();
 
 	#region Initialization
 	await app.Services.InitializeSeedDataAsync();
@@ -37,8 +42,8 @@ try
 		app.UseSwagger();
 		app.UseSwaggerUI(options =>
 		{
-			options.SwaggerEndpoint("/swagger/Admin/swagger.json", "Admin API");
-			options.SwaggerEndpoint("/swagger/Public/swagger.json", "Public API");
+			options.SwaggerEndpoint("/swagger/Admin/swagger.json", "Admin API v1");
+			options.SwaggerEndpoint("/swagger/Public/swagger.json", "Public API v1");
 		});
 	}
 

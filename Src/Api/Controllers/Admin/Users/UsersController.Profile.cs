@@ -2,6 +2,7 @@
 using Application.Common.Definitions.Messages;
 using Application.Modules.Users.Bases.Responses.Users;
 using Application.Modules.Users.Entities;
+using Application.Modules.Users.Queries.Profile;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,6 @@ public partial class UsersController
 	[Authorize]
 	public async Task<ActionResult<SuccessResultResponse<UserDefaultResponse>>> ProfileAsync(CancellationToken cancellationToken = default)
 	{
-		return ResultResponse(await userService.GetProfileAsync(cancellationToken), Message<User>.Login());
+		return ResultResponse(await mediator.Send(new GetUserProfileQuery(), cancellationToken), Message<User>.Login());
 	}
 }

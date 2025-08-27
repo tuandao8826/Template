@@ -2,18 +2,11 @@
 using Application.Modules.Users.Entities;
 using FluentValidation;
 
-namespace Application.Modules.Users.Bases.Requests.Auths;
+namespace Application.Modules.Users.Commands.Login;
 
-public class LoginUserRequest
+public class LoginUserCommandValidator : AbstractValidator<LoginUserCommand>
 {
-    public string? Username { get; set; }
-
-    public string? Password { get; set; }
-}
-
-public class LoginUserRequestValidator : AbstractValidator<LoginUserRequest>
-{
-    public LoginUserRequestValidator()
+    public LoginUserCommandValidator()
     {
         RuleFor(x => x.Username)
             .NotEmpty().WithMessage(Message<User>.Required(x => x.Username));

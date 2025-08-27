@@ -1,12 +1,14 @@
-﻿using Application.Common.ApiWrapper;
+﻿using Api.Common.ApiVersioning;
+using Application.Common.ApiWrapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Common.ControllerWrappers;
 
-[Route("api/[area]/[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
 [ApiController]
 [Area("Public")]
 [ApiExplorerSettings(GroupName = "Public")]
+[ApiVersion(EndpointVersion.One)]
 public class PublicBaseController : ControllerBase
 {
 	protected ActionResult<SuccessResultResponse<TData>> ResultResponse<TData>(TData? data, string message)

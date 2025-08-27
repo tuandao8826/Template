@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Api.Common.Swagger;
 
@@ -8,8 +9,8 @@ public static class Startup
 	{
 		services.AddSwaggerGen(options =>
 		{
-			options.SwaggerDoc("Admin", new OpenApiInfo { Title = "Admin API", Version = "v1" });
-			options.SwaggerDoc("Public", new OpenApiInfo { Title = "Public API", Version = "v1" });
+			options.SwaggerDoc("Admin", new OpenApiInfo { Title = "Admin API v1", Version = "1" });
+			options.SwaggerDoc("Public", new OpenApiInfo { Title = "Public API v1", Version = "1" });
 
 			options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
 			{
@@ -22,7 +23,7 @@ public static class Startup
 			});
 
 			options.OperationFilter<AuthorizeCheckOperationFilter>();
-		});
+        });
 
 		return services;
 	}

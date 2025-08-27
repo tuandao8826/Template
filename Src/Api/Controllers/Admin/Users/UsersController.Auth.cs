@@ -1,7 +1,6 @@
 ﻿using Application.Common.ApiWrapper;
 using Application.Common.Definitions.Messages;
-using Application.Common.Identity.Responses;
-using Application.Modules.Users.Bases.Requests.Auths;
+using Application.Modules.Users.Commands.Login;
 using Application.Modules.Users.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,8 +9,8 @@ namespace Api.Controllers.Admin.Users;
 public partial class UsersController
 {
 	[HttpPost("Login")]
-	public async Task<ActionResult<SuccessResultResponse<AuthTokenResponse>>> LoginAsync([FromBody] LoginUserRequest request, CancellationToken cancellationToken = default)
+	public async Task<ActionResult<SuccessResultResponse<LoginUserResponse>>> LoginAsync([FromBody] LoginUserCommand request, CancellationToken cancellationToken = default)
 	{
-		return ResultResponse(await userService.LoginAsync(request, cancellationToken), Message<User>.Login());
+		return ResultResponse(await mediator.Send(request, cancellationToken), Message<User>.Login());
 	}
 }

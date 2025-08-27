@@ -4,4 +4,7 @@ using MediatR;
 
 namespace Application.Modules.Users.Commands.Create;
 
-public class CreateUserCommand : UserRequest, IRequest<UserDefaultResponse>;
+public class CreateUserCommand : UserRequest, IRequest<UserDefaultResponse>
+{
+    public string? Username { get; set; }
+}

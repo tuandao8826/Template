@@ -11,11 +11,8 @@ using System.ComponentModel;
 
 namespace Application.Modules.Users.Bases.Requests.Users;
 
-[DisplayName(nameof(User))]
 public class UserRequest
 {
-    public string? Username { get; set; }
-
     public string? Password { get; set; }
 
     public string? Name { get; set; }
@@ -39,11 +36,6 @@ public class UserRequestValidator : AbstractValidator<UserRequest>
 {
     public UserRequestValidator(IUnitOfWork unitOfWork)
     {
-        RuleFor(x => x.Username)
-            .NotEmpty().WithMessage(Message<User>.Required(x => x.Username))
-            .MinimumLength(6).WithMessage(Message<User>.TooShort(x => x.Username))
-            .MaximumLength(50).WithMessage(Message<User>.TooLong(x => x.Username));
-
         RuleFor(x => x.Password)
             .NotEmpty().WithMessage(Message<User>.Required(x => x.Password))
             .MinimumLength(6).WithMessage(Message<User>.TooShort(x => x.Password))
