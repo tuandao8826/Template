@@ -1,4 +1,4 @@
-# 🎯 Role Management API
+# 🎯 Introduce
 
 This project is built with **ASP.NET Core**, designed following **Clean Architecture principles** and implementing **CQRS (Command Query Responsibility Segregation)** with **MediatR**.  
 
@@ -6,7 +6,7 @@ The goal of this project is to provide a scalable, testable, and maintainable fo
 
 ---
 
-## 🚀 Features
+## 🚀 Overview
 
 - **CQRS with MediatR**
   - Separation of **commands** (write operations) and **queries** (read operations).
