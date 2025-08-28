@@ -30,7 +30,7 @@ Ex: Migrators/Migrators.PostgreSql
 To create a new migration file based on changes in your models, run the following command:
 
 ```powershell
-Add-Migration -Context ApplicationDbContext
+Add-Migration <MigrationName> -Context ApplicationDbContext
 ```
 
 ---
