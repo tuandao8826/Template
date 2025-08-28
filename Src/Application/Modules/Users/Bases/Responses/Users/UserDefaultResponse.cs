@@ -1,4 +1,4 @@
-﻿using Application.Modules.Roles.Responses.Roles;
+﻿using Application.Modules.Roles.Bases.Responses.Roles;
 using Application.Modules.Users.Entities;
 using AutoMapper;
 
