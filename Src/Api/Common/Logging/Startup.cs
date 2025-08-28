@@ -19,7 +19,8 @@ public static class Startup
 		if (System.Diagnostics.Debugger.IsAttached)
 		{
 			builder.Logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Information);
-		}
+			builder.Logging.AddFilter("Microsoft.AspNetCore.Mvc.Infrastructure", LogLevel.Information);
+        }
 		else
 		{
 			builder.Logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Warning);
