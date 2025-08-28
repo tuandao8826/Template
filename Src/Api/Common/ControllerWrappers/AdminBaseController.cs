@@ -4,11 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Common.ControllerWrappers;
 
-[Route("api/[area]/v{version:apiVersion}/[controller]")]
 [ApiController]
+[Route("api/[controller]")]
 [Area("Admin")]
 [ApiExplorerSettings(GroupName = "Admin")]
-[ApiVersion(EndpointVersion.One)]
 public class AdminBaseController : ControllerBase
 {
     protected ActionResult<SuccessResultResponse<TData>> ResultResponse<TData>(TData? data, string message)
